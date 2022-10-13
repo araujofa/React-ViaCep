@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./backgroundIMG.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  color: white;
+  font-size: 2.5em;
+  animation: flip 1s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes flip{
+  from {
+    transform: rotateX(90deg);
+  }
+  to{
+    transform: rotateX(0deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px;
+  background-color: rgba(44, 44, 255, 0.418);
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 1px 3px 8px rgba(26, 26, 26, 0.486);
+}
+
+.inputs input {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.inputs input::placeholder{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.inputs button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.inputs button:hover{
+  transform: scale(1.2);
+}
+
+.main {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 1px 3px 8px rgba(26, 26, 26, 0.486);
+  border-radius: 5px;
+  width: 30vw;
+}
+
+.main h2 {
+  font-size: 1.8;
+  margin: 5px 0;
+}
+
+.main span {
+  margin: 10px 0;
+}
+
+@media (max-width:600px){
+  .main {
+    width: 60vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    font-size: 3.5em;
   }
 }
